@@ -1,0 +1,727 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap');
+
+:root 
+{
+    --green: green;
+    --black: #130f40;
+    --light-color: #666;
+    --box-shadow:  0 4.5px 5px rgba(0, 0, 0, 0.1);
+    --border: 0.1rem solid rgba(0, 0, 0.1);
+    --outline: .1rem solid rgb(17, 16, 16);
+}
+
+*
+{
+    font-family: 'Poppins',sans-serif ;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+}
+
+html
+{
+   font-size: 17px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    
+}
+body
+{
+    background: #eee;
+}
+
+/*css code for banner*/
+section
+{
+    padding: 1rem .5%;
+}
+
+.heading
+{
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+.heading span
+{
+     position: relative;
+    background: var(--green);
+    color:#fff;
+    display: inline-block;
+    padding: 1rem 3 rem;
+    clip-path: polygon(51% 3%, 100% 20%, 100% 80%, 55% 97%, 0 87%, 0 18%); 
+     box-shadow:  0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.heading span :hover
+{
+    color: var(--green);
+}
+
+.btn
+{
+    border: .2rem solid var(--black);
+    margin-top: 1rem;
+    display: flex;
+    padding: .5rem 3;
+    font-size: 1.5rem;
+    border-radius: .3rem;
+   color: var(--black);
+   cursor: pointer;
+   background: none;
+   
+}
+.btn:hover
+{
+    background: var(--green);
+    color: #fff;
+   
+}
+
+.header
+{ 
+    border: 0px solid;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;   /* Ensure it is above the home section */
+    /*top botton and left and right*/
+    padding: 1rem 5%;
+    background: #fff;
+    height: 4rem;
+    border-radius:0.2rem;
+    box-shadow: var(--box-shadow);
+   
+   
+  
+
+}
+.header .logo
+{
+    font-size:1.5rem;
+    font-weight: bolder;
+
+
+}
+.header .logo i
+{
+    color:var(--green);
+}
+.header .navbar a
+{
+font-size: 1rem;
+margin:0 1rem;
+color: var(--black);
+
+}
+.header .navbar a:hover
+{
+    color: var(--green);
+}
+.header .icons div
+{
+   border: 0;
+   height: 2.5rem;
+   width: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 10px;
+    background: #eee;
+    color: var(--black);
+    font-size: 1.5rem;
+    margin-right: .3rem;
+    text-align: center;
+    cursor: pointer;
+
+}
+.header .icons div:hover
+{
+    background: var(--green);
+    color: white;
+} 
+#menu-btn
+{
+    display: none;
+}
+
+
+
+.header .search-form
+{
+    position: 0px solid;
+    position: absolute;
+    top:115%;
+    right: -100%;
+    width: 40%;
+    height: 2rem;
+    background: #fff;
+    border-radius: .3rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+.header .search-form.active
+{ 
+    right: 1rem;
+    transition: .1s linear;
+}
+
+.header .search-form input
+{
+    height: 100%;
+    width: 100%;
+    background:fixed;
+    text-transform:none;
+    font-size:1rem;
+    color:var(--black);
+    padding: 0 1rem;
+}
+.header .search-form label
+{
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+   color: var(--black);
+   cursor: pointer;
+}
+.header .search-form label:hover
+{
+    color:var(--green)
+}
+.header .shopping-cart
+{
+    border: 0px solid;
+    position:absolute;
+    
+    top: 115%;
+    right: -110%;
+   
+    padding: .5rem;
+    cursor: pointer;
+   
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+   
+   background: #fff;
+}
+.header .shopping-cart .box
+{
+    border: 0px solid blue;
+    display: flex;
+    font-size: .7rem;
+    align-items: center;
+    width: 15rem;
+    gap: .4rem;
+    position: relative;
+    margin: .5rem 0rem;
+}
+.header .shopping-cart .box img
+{
+    height: 4rem;
+ 
+}
+
+
+.header .shopping-cart .box .fa-trash
+{
+    font-size: 1rem;
+    
+    position: absolute;
+    top: 50%;
+    right: .7rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color:var(--light-color)
+}
+.header .shopping-cart .box .fa-trash:hover
+{
+    color: var(--green);
+}
+.header .shopping-cart .box .content h3
+{  
+    color: var(--black);
+    font-size: .8rem;
+    padding-bottom: .3rem;
+}
+.header .shopping-cart .box .content span
+{
+    color: var(--black);
+    font-size: .7rem;
+}
+.header .shopping-cart .box .content .quantity
+{
+    padding-left: .5rem;
+}
+.header .shopping-cart .total
+{
+    font-size: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: bolder;
+    color: var(--black)
+}
+.header .shopping-cart .btn
+{
+    display: block;
+    text-align: center;
+    margin: .5rem 0;
+}
+.header .shopping-cart.active
+{
+    right:1rem;
+    transition: .1s linear;
+}
+
+
+
+
+.color-navigation {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.color-navigation .arrow {
+    padding: 0.5rem;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.color-navigation .arrow:hover {
+    background: var(--green);
+    color: #fff;
+}
+
+.header .login-form
+{
+    border: 0px solid;
+    position: absolute;
+    width: 16rem;
+    top:100%;
+    right: -110%;
+    box-shadow: var(--box-shadow);
+    padding: .5rem ;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+    margin: .7rem 0 ;
+
+}
+
+.header .login-form.active
+{
+    right: 1rem;
+    transition: .1s linear; 
+}
+
+.header .login-form h3
+{
+   
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--black);
+
+}
+.header .login-form .box
+{
+    
+    width: 100%;
+    border: 0px solid;
+    margin: .3rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: .8rem;
+    font-size: .8rem;
+    color: var(--black);
+    text-transform: none;
+
+ 
+}
+.header .login-form .btn
+{
+    border: 2px solid;
+    font-size: 1rem;
+    padding: .2rem ;
+    
+    margin: .1rem 5rem;
+    
+}
+.header .login-form p
+{
+    font-size: .7rem;
+    margin: .3rem 0;
+    text-align: center;
+    color: var(--light-color);
+   
+}
+.header .login-form p a
+{
+    font-size: .8rem;
+    
+    color:var(--green);
+    text-decoration-line:underline;
+}
+
+
+    /* Home section styles */
+.home {
+    top: 1rem;
+    border: 1px solid;
+    font-size: 5rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    background: url(../image/image01.jpg) no-repeat center;
+    background-position: center;
+    background-size: cover;
+    padding: 0rem 5%;
+    color: #eee;
+    background-color: #eee;
+    height: 60vh; /* Ensure it takes full viewport height or more */
+    max-width:80rem;
+    
+    margin-top: 3.5rem; /* Adjust this if necessary based on your nav bar height */
+    position:relative;
+    overflow:hidden; /* Prevent content overflow */
+}
+
+/* Add an overlay to darken the image */
+.home::before
+{
+    content: "";
+    position:absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(5, 5, 5, 0.4); /* Darken the image */
+}
+
+/* Content inside the home section */
+.home .content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack h3, p, and button vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Heading style */
+.home .content h3 {
+    color: #fff; /* Light text color for better contrast on the dark overlay */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Span inside heading */
+.home .content h3 span {
+    color: green;
+    font-size: 2.1rem;
+}
+
+/* Paragraph style */
+.home .content p {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: #fa0909;
+    text-align: center;
+}
+
+/* Button style */
+.home .content .btn {
+    background: red; /* Define your button color */
+    color: #fff;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2; /* Ensure button is above the overlay */
+    text-align: center;
+}
+
+/* Button hover effect */
+.home .content .btn:hover {
+    background: var(--green); /* Change to desired hover effect */
+}
+
+
+
+
+.features {
+    padding: .5rem .5rem;
+    background:#fff;
+    text-align: center;
+}
+
+.features .heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    
+}
+
+.features .heading span {
+    color: #fff; /* Highlighted text color */
+}
+
+.features .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); /* Smaller boxes */
+    gap: .5rem; /* Space between the boxes */
+    justify-content: center;
+    padding: 1rem 2rem;
+}
+
+.features .box {
+    border: none;
+    background: #fff;
+    padding: .5rem; /* Reduced padding to make the box smaller */
+    border-radius: 8px;
+    box-shadow:var(--box-shadow); /* Subtle shadow for smaller boxes */
+    outline: -3px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 90%; /* Make the box narrower */
+    margin: 0 auto; /* Center the box */
+}
+
+.features .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px green ; /* Slight hover effect */
+}
+
+.features .box img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    height: 120px; /* Smaller image height for smaller boxes */
+    object-fit: cover; /* Ensure images are cropped proportionally */
+}
+
+.features .box h3 {
+    font-size: 1rem; /* Smaller heading text */
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.features .box p {
+    font-size: 0.8rem; /* Smaller paragraph text */
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.features .box .btn {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgb(6, 148, 6);
+    color: #fff;
+    padding: 0.4rem 0.8rem; /* Smaller padding for buttons */
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.8rem; /* Smaller button font size */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.features .box .btn:hover {
+    background: darkgreen;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slight hover shadow */
+}
+
+
+
+
+
+
+/*media queires */
+@media (max-width:991px)
+{
+    html
+{
+   font-size: 55%;
+   
+        }
+        .header
+        { 
+            padding: 1rem;
+        }
+        section
+{
+    padding: 1rem;
+}
+     
+}
+
+@media (max-width:768px)
+{
+  
+    #menu-btn
+{
+    display:inline-block;
+}
+
+.header .navbar.active
+    {
+        right: 1rem;
+        transition: .1s linear; 
+
+    }
+    .header .search-form
+    {
+        width: 94%;
+        height: 110%;
+        margin: 0rem .4rem;
+        
+    }
+    .header .search-form input
+    {
+        font-size: 2rem;
+        margin: 0rem 1rem;
+    }
+    .header .search-form label
+    {
+        font-size: 2.5rem;
+        padding-right: 2rem;
+         padding-left: .5rem;
+        
+    }
+
+
+    .header .navbar
+    {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        box-shadow: var(--box-shadow);
+        border-radius: .3rem;
+        background: #fff;
+        
+    }
+    .header .navbar a
+    {
+       font-size: 2rem; 
+       margin: 1.5rem 2.5rem;
+       display: block;
+      
+    }
+    
+
+    .features .box {
+        margin: 0.5rem; /* Added spacing around boxes */
+        padding: 0.5rem; /* Ensure consistent padding */
+        height: auto; /* Let the height adjust dynamically */
+        text-align: center; /* Ensure content stays centered */
+    }
+
+    .features .box img {
+        max-width: 60%; /* Reduce image width for smaller screens */
+        border-radius: 8px; /* Maintain rounded corners */
+        margin-bottom: 0.5rem; /* Ensure proper spacing */
+        height: 80px; /* Adjust image height for better visibility */
+        object-fit: cover; /* Crop images proportionally */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .features .box h3 {
+        font-size: 1.2rem; /* Slightly larger heading for readability */
+        margin-bottom: 0.5rem; /* Add spacing below the heading */
+    }
+
+    .features .box p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+        line-height: 1.4; /* Improve readability */
+        margin-bottom: 1rem; /* Add spacing below the paragraph */
+    }
+
+    .features .box .btn {
+        padding: 0.4rem 0.8rem; /* Adjust padding for smaller buttons */
+        font-size: 0.9rem; /* Adjust button text size */
+        max-width: 60%; /* Ensure button fits well within smaller boxes */
+        display: inline-block;
+        margin: 0 auto; /* Center the button */
+    }
+    .home
+        {
+           max-height:  40vh; /* Ensure it takes full viewport height or more */
+            max-width:90rem;
+        }
+ 
+}
+    
+
+
+@media (max-width:450px)
+{
+    html
+{
+   font-size: 50%;
+   
+        }
+        .heading
+        {
+            font-size: 5rem;
+            height: 50%;
+            width: 50%;
+           display: inline-block;
+        }
+        .home
+        {
+           max-height:  30vh; /* Ensure it takes full viewport height or more */
+            max-width:80rem;
+        }
+ 
+     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
